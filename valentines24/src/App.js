@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import Carousel from './components/carousel.js'
 import './App.css';
 
 
@@ -36,8 +37,10 @@ function App() {
       {yesPress ? (
         <>
           {/* add a a photo of both of us here.*/}
-          <img src={logo} className="App-logo" alt="logo" />
-          <div className="accept"> Yay!! Thanks Pookie!! &lt;3</div>
+          <Carousel />
+          <div className="accept"> 
+            <h1>Yay!! Thanks Pookie!! &lt;3</h1>
+          </div>
         </>
       ) : (
 
