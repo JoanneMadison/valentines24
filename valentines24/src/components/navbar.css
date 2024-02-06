@@ -1,0 +1,11 @@
+.bg-navbarColor {
+    background-image: linear-gradient(to bottom right, #D62C38, #B21D50, #A8257F);
+  
+}
+
+.navbarText { 
+    color: white;
+    font-family: "Brush Script MT", cursive;
+    font-size: 50px;
+   
+}

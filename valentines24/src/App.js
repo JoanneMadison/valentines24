@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
 import './App.css';
 
 
@@ -8,10 +9,10 @@ const phrases = [
       "You can't do that",
       "You REALLY can't do that",
       "Are you sure?", 
-      "Really sure?", 
-      "Pookie please", 
-      "I'm gonna cry", 
-      "You're breaking my heart :(", 
+      "Really sure?....", 
+      "Pookie please....", 
+      "I'm gonna cry :(", 
+      "You're breaking my heart </3", 
       "Ok you're really not playing around :0", 
 ];
 
@@ -49,27 +50,30 @@ function App() {
             frameBorder="0" 
             class="giphy-embed" 
             allowFullScreen>
-
-            </iframe>
-            <p>
-              <a href="https://giphy.com/gifs/valentine-valentines-day-vday-XYm7qC0WfvhGB3B1HN"></a>
-            </p>
-          <div>Will you be my valentine?</div>
+          </iframe>
+          <div className="paragraphText">
+            <h1>Will you be my valentine?</h1>
+          </div>
           <div>
-            <button
+            <Button
               className="yesButton" 
               style = {{fontSize: yesButtonSize,}}
               onClick = {() => setYesPressed(true)}
+              variant = "success"
+              size = "lg"
             >
             Yes
-            </button>
+            </Button>
               
-            <button 
-              className="noButton" 
-              onClick={handleNoClick}
+            <Button 
+              className = "noButton" 
+              onClick = {handleNoClick}
+              variant = "danger"
+              size = "lg"
+              
             >
               {getNoButtonText()}
-            </button>
+            </Button>
           </div>
         </>
       )}

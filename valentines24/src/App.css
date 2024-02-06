@@ -4,4 +4,9 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-color: #ffc5e6;
+}
+
+.paragraphText { 
+  font-family: "Brush Script MT", cursive;
 }
