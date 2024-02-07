@@ -1,7 +1,11 @@
-import logo from './logo.svg';
+
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Carousel from './components/carousel.js'
+import Heart from './images/heart.gif';
+import Pink from './images/multiple_hearts.gif';
+import Love from './images/love_you.gif';
+
 import './App.css';
 
 
@@ -15,6 +19,7 @@ const phrases = [
       "I'm gonna cry :(", 
       "You're breaking my heart </3", 
       "Ok you're really not playing around :0", 
+      "Bruh just hit yes at this point..."
 ];
 
 function App() {
@@ -37,27 +42,24 @@ function App() {
       {yesPress ? (
         <>
           {/* add a a photo of both of us here.*/}
+          <img class="love-you" src={Love} alt="A love you gif" />
           <Carousel />
+          <img class="pink" src={Pink} alt="A pink hearts gif" />
           <div className="accept"> 
-            <h1>Yay!! Thanks Pookie!! &lt;3</h1>
+            <h1>Yay!! Thanks Pookie!! Love you lots!! &lt;3   </h1>
+            <h1> Enjoy some of my favorite memories of us, Happy Valentines Day!!</h1>
+            
           </div>
         </>
       ) : (
 
         <>
           {/* Add a valentine's day photo here.*/}
-          <iframe 
-            src="https://giphy.com/embed/XYm7qC0WfvhGB3B1HN" 
-            width="480" 
-            height="480" 
-            frameBorder="0" 
-            class="giphy-embed" 
-            allowFullScreen>
-          </iframe>
+          <img src={Heart} alt="A heart gif" />
           <div className="paragraphText">
             <h1>Will you be my valentine?</h1>
           </div>
-          <div>
+          <div className="Buttons">
             <Button
               className="yesButton" 
               style = {{fontSize: yesButtonSize,}}
@@ -73,6 +75,7 @@ function App() {
               onClick = {handleNoClick}
               variant = "danger"
               size = "lg"
+              
               
             >
               {getNoButtonText()}

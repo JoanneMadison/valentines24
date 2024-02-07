@@ -1,4 +1,6 @@
+import React, {useState, useEffect} from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import './carousel.css';
 import Cervezas from '../images/cervezas.jpeg';
 import Coaster from '../images/coaster.jpeg';
 import EscapeRoom from '../images/escape_room.jpeg';
@@ -19,6 +21,8 @@ import Pool from '../images/pool.jpeg';
 import Unlv from '../images/unlv.jpeg';
 import Vgk from '../images/vgk.jpeg';
 import HighRoller from '../images/highroller.jpeg';
+
+
 
 const images = {
     cervezas: <img src={Cervezas} alt="Jordan and Madison at a bar in Las Vegas" />,
@@ -41,22 +45,37 @@ const images = {
     unlv: <img src={Unlv} alt="Jordan and Madison at UNLV"/>,
     vgk: <img src={Vgk} alt="Jordan and Madison at VGK Fan Fest"/>,
     highRoller: <img src={HighRoller} alt="Jordan and Madison on the High Roller in Las Vegas."/>,
-    };
+};
 
 
 
 function CarouselImages() {
-  const carouselItems = Object.entries(images).map(([key, image]) => (
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect (() => {
+    const intervalId = setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * Object.keys(images).length);
+      setCurrentIndex(randomIndex);
+    }, 5000);
+    return () => clearInterval(intervalId);
+  }, []);
+  
+  const carouselItems = Object.entries(images).map(([key, image], index) => (
     <Carousel.Item key={key}>
-      {image}
-      {/*<Carousel.Caption>
-        <h3>{`${key.charAt(0).toUpperCase()}${key.slice(1)} slide label`}</h3>
-        <p>Some description for the slide.</p>
-      </Carousel.Caption>*/}
+      <div className="carousel">
+        {image}
+      </div>
     </Carousel.Item>
   ));
 
-  return <Carousel fade>{carouselItems}</Carousel>;
+  return (
+    <>
+      
+      <Carousel slide={false} activeIndex={currentIndex}>{carouselItems}</Carousel>;
+    </>
+  
+  );
 }
 
 export default CarouselImages;

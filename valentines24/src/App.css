@@ -7,6 +7,26 @@
   background-color: #ffc5e6;
 }
 
-.paragraphText { 
+.paragraphText, h1, noButton, yesButton{ 
   font-family: "Brush Script MT", cursive;
+}
+
+.accept { 
+  text-align: center;
+}
+
+img.pink, img.love-you { 
+  position: absolute;
+  width: 300px;
+  height: auto;
+}
+
+img.pink{
+  left: 50px;
+  top: 150px;
+}
+
+img.love-you{
+  right: 50px;
+  top: 150px;
 }
