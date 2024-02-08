@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Carousel from './components/carousel.js'
+import Spotify from './components/spotify.js';
 import Heart from './images/heart.gif';
 import Pink from './images/multiple_hearts.gif';
 import Love from './images/love_you.gif';
@@ -28,10 +29,12 @@ function App() {
   const [yesPress, setYesPressed] = useState(false);
   const yesButtonSize = noCount * 20 + 16;
 
+  /* Count "no" clicks  */
   function handleNoClick() {
     setNoCount(noCount + 1);
   }
 
+  /* Get next phrase from array on each no button click */
   function getNoButtonText() { 
     return phrases[Math.min(noCount, phrases.length - 1)];
   }
@@ -41,25 +44,27 @@ function App() {
     <div className="valentine-container">
       {yesPress ? (
         <>
-          {/* add a a photo of both of us here.*/}
+          {/* Handle yes button press */}
           <img class="love-you" src={Love} alt="A love you gif" />
           <Carousel />
           <img class="pink" src={Pink} alt="A pink hearts gif" />
           <div className="accept"> 
             <h1>Yay!! Thanks Pookie!! Love you lots!! {"<"}3</h1>
             <h1> Enjoy some of my favorite memories of us, Happy Valentines Day!!</h1>
-            <iframe title="Playa Saturno" style={{borderRadius: '12px', position: 'absolute', right: '20px', bottom: '-50px', }} src="https://open.spotify.com/embed/album/6E7Awtyx6opYTbPXx6ApzB?utm_source=generator" width="20%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <Spotify />
+            {/*<iframe title="Playa Saturno" style={{borderRadius: '12px', position: 'absolute', right: '20px', bottom: '-50px', }} src="https://open.spotify.com/embed/album/6E7Awtyx6opYTbPXx6ApzB?utm_source=generator" width="20%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>*/}
           </div>
         </>
       ) : (
 
         <>
-          {/* Add a valentine's day photo here.*/}
+          {/* Website on arrival */}
           <img src={Heart} alt="A heart gif" />
           <div className="paragraphText">
             <h1>Will you be my valentine?</h1>
           </div>
           <div className="Buttons">
+            {/* Pass yes button size */}
             <Button
               className="yesButton" 
               style = {{fontSize: yesButtonSize,}}
@@ -69,7 +74,7 @@ function App() {
             >
               Yes
             </Button>
-              
+             {/* Handle no button click, increase yes size */} 
             <Button 
               className = "noButton" 
               onClick = {handleNoClick}
@@ -78,6 +83,7 @@ function App() {
               
               
             >
+              {/* Alternate through phrases */}
               {getNoButtonText()}
             </Button>
           </div>

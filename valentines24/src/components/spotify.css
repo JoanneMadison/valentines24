@@ -1,0 +1,22 @@
+#spotify-embed-container{
+    border-radius: 12px; 
+    position: absolute; 
+    right: 20px; 
+    bottom: -55px;
+    font-family: "Brush Script MT", cursive;
+}
+
+ #spotify-controls .spotify-controls-right{ 
+    position: absolute;
+    right: 70px;
+    bottom: -70px;
+    color: black;
+}
+
+#spotify-controls .spotify-controls-left {
+    position: absolute;
+    right: 200px;
+    bottom: -70px;
+    color: black;
+
+ }

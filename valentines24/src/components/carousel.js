@@ -23,7 +23,7 @@ import Vgk from '../images/vgk.jpeg';
 import HighRoller from '../images/highroller.jpeg';
 
 
-
+/* Array of photos to cycle through */
 const images = {
     cervezas: <img src={Cervezas} alt="Jordan and Madison at a bar in Las Vegas" />,
     coaster: <img src={Coaster} alt="Jordan and Madison at Adventureland in Iowa" />,
@@ -53,6 +53,7 @@ function CarouselImages() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  /* On effect, get a random photo index, change every 5 seconds. */
   useEffect (() => {
     const intervalId = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * Object.keys(images).length);
@@ -61,6 +62,7 @@ function CarouselImages() {
     return () => clearInterval(intervalId);
   }, []);
   
+  /* Enter, map, and cycle through images */
   const carouselItems = Object.entries(images).map(([key, image], index) => (
     <Carousel.Item key={key}>
       <div className="carousel">
