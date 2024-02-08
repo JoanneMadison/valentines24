@@ -48,6 +48,7 @@ function App() {
           <div className="accept"> 
             <h1>Yay!! Thanks Pookie!! Love you lots!! {"<"}3</h1>
             <h1> Enjoy some of my favorite memories of us, Happy Valentines Day!!</h1>
+            <iframe title="Playa Saturno" style={{borderRadius: '12px', position: 'absolute', right: '20px', bottom: '-50px', }} src="https://open.spotify.com/embed/album/6E7Awtyx6opYTbPXx6ApzB?utm_source=generator" width="20%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
           </div>
         </>
       ) : (
