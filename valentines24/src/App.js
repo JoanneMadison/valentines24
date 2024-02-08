@@ -46,9 +46,8 @@ function App() {
           <Carousel />
           <img class="pink" src={Pink} alt="A pink hearts gif" />
           <div className="accept"> 
-            <h1>Yay!! Thanks Pookie!! Love you lots!! &lt;3   </h1>
+            <h1>Yay!! Thanks Pookie!! Love you lots!! {"<"}3</h1>
             <h1> Enjoy some of my favorite memories of us, Happy Valentines Day!!</h1>
-            
           </div>
         </>
       ) : (
@@ -67,7 +66,7 @@ function App() {
               variant = "success"
               size = "lg"
             >
-            Yes
+              Yes
             </Button>
               
             <Button 

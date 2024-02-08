@@ -71,11 +71,10 @@ function CarouselImages() {
 
   return (
     <>
-      
-      <Carousel slide={false} activeIndex={currentIndex}>{carouselItems}</Carousel>;
+      <Carousel slide={false} activeIndex={currentIndex}>{carouselItems}</Carousel>
     </>
   
-  );
+  )
 }
 
 export default CarouselImages;
